@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        // store in root directory. Cannot access without root. Associate with getFilesDir
+        // file path will be storage/data/user/0/Android/data/com.example.ex/files/Example Images/
+        <files-path name="my_internal_videos" path="Videos/"/>
+    </paths>
+</resources>
