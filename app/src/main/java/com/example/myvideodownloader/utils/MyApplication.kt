@@ -1,6 +1,8 @@
 package com.example.myvideodownloader.utils
 
 import android.app.Application
+import androidx.lifecycle.MutableLiveData
+import com.example.myvideodownloader.inprogress.ProgressModel
 
 class MyApplication: Application() {
 
@@ -9,6 +11,7 @@ class MyApplication: Application() {
     }
 
     companion object {
-        var downloadId = 0L
+        var downloadList = mutableListOf<ProgressModel>()
+        val completedDownloadLiveData = MutableLiveData<Long>()
     }
 }

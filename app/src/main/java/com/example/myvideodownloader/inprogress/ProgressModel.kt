@@ -2,6 +2,11 @@ package com.example.myvideodownloader.inprogress
 
 import android.graphics.Bitmap
 
-data class ProgressModedata (val name: String, val progress: Long, val bitmap: Bitmap?) {
-
-}
+data class ProgressModel (
+    val name: String,
+    val downloadId: Long,
+    var progress: Long,
+    var isPaused: Boolean = false,
+    var isFinished: Boolean = false,
+    val bitmap: Bitmap? = null
+)

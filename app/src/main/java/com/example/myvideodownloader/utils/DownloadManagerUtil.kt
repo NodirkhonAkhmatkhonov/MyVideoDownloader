@@ -11,7 +11,7 @@ import android.widget.Toast
 
 class DownloadManagerUtil(private val mContext: Context) {
 
-    fun checkDownloadManagerEnable():Boolean {
+    fun checkDownloadManagerEnable(): Boolean {
         try {
             val state = mContext.packageManager.getApplicationEnabledSetting("com.android.providers.downloads")
             if (state == PackageManager.COMPONENT_ENABLED_STATE_DISABLED
@@ -48,6 +48,9 @@ class DownloadManagerUtil(private val mContext: Context) {
         req.setVisibleInDownloadsUi(true)
         val dm = mContext.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
         return try {
+            dm.query(object : DownloadManager.Query() {
+
+            })
             dm.enqueue(req)
         } catch (e: Exception) {
             -1
