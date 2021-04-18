@@ -1,11 +1,8 @@
 package com.example.myvideodownloader.player
 
 import android.content.Context
-import android.content.res.Configuration
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myvideodownloader.databinding.ActivityPlayerBinding
 import com.google.android.exoplayer2.MediaItem
@@ -28,13 +25,11 @@ class PlayerActivity: AppCompatActivity(){
         val mediaItem = MediaItem.fromUri(path)
         player.setMediaItem(mediaItem)
         player.prepare()
-//        player.seekTo(savedInstanceState?.getLong("position", 0)!!.toLong())
 
         val sharedPref = this.getPreferences(Context.MODE_PRIVATE) ?: return
         player.seekTo(sharedPref.getLong("position", 0))
         player.play()
 
-        //        Log.d(TAG, "onCreate: ${}")
     }
 
     override fun onStop() {
